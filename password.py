@@ -38,16 +38,15 @@ password_output = Label(password_frame, text="", wraplength=400, font=('Arial', 
 password_output.pack(side='left', padx=5)
 
 def generate_password():
-    try:
-        size = length.get()
-        if size < 1:
-            password_output.config(text="Length must be at least 1")
-            return
-        keys = "1234567890~!@#$%^&*()_+-`={}|[ABCDEGFHIJKLMNOPQRSTUVWXYZ]:;,/<>?.qwertyuiopasdfghjklzxcvbnm"
-        lst = list(keys)
-        password = "".join(choice(lst) for _ in range(size))
-        password_output.config(text=password)
-    except:
-        password_output.config(text="Invalid input")
+    
+      size = length.get()
+      if size < 1:
+          password_output.config(text="Length must be at least 1")
+          return
+      keys = "1234567890~!@#$%^&*()_+-`={}|[ABCDEGFHIJKLMNOPQRSTUVWXYZ]:;,/<>?.qwertyuiopasdfghjklzxcvbnm"
+      lst = list(keys)
+      password = "".join(choice(lst) for _ in range(size))
+      password_output.config(text=password)
+    
 
 root.mainloop()
