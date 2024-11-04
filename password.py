@@ -43,10 +43,10 @@ def generate_password():
       if size < 1:
           password_output.config(text="Length must be at least 1")
           return
-      keys = "1234567890~!@#$%^&*()_+-`={}|[ABCDEGFHIJKLMNOPQRSTUVWXYZ]:;,/<>?.qwertyuiopasdfghjklzxcvbnm"
-      lst = list(keys)
-      password = "".join(choice(lst) for _ in range(size))
-      password_output.config(text=password)
+      word = "1234567890~!@#$%^&*()_+-`={}|[QWERTYUIOPASDFGHJKLZXCVBNM]:;,/<>?.qwertyuiopasdfghjklzxcvbnm"
+      lst = list(word)
+      passwd = "".join(choice(lst) for i in range(size))
+      password_output.config(text=passwd)
     
 
 root.mainloop()
